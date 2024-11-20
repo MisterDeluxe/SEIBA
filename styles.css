@@ -1,17 +1,18 @@
 /* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif; /* Fuente más profesional */
     margin: 0;
     padding: 0;
-    background-color: #fef3e3; /* Fondo beige cálido */
-    color: #5a3e36; /* Marrón cálido */
+    background-color: #f8f9fa; /* Gris claro */
+    color: #343a40; /* Gris oscuro para el texto */
 }
 
+/* Header */
 header {
     width: 100%;
-    background-color: #d98106; /* Naranja cálido */
+    background-color: #1e3a5f; /* Azul oscuro */
     color: white;
-    padding: 15px;
+    padding: 20px 0;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -19,6 +20,7 @@ header {
 header h1 {
     margin: 0;
     font-size: 2em;
+    font-weight: 700;
 }
 
 nav ul {
@@ -26,7 +28,7 @@ nav ul {
     justify-content: center;
     list-style: none;
     padding: 0;
-    margin: 10px 0 0;
+    margin: 15px 0 0;
 }
 
 nav ul li {
@@ -36,49 +38,171 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 1.2em;
-    transition: color 0.3s ease;
+    font-size: 1.1em;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #f08502; /* Amarillo cálido */
+    background-color: #2b5d8a; /* Azul intermedio */
 }
 
 /* Sección del contenido */
 main {
-    padding: 20px;
+    padding: 40px 20px;
     text-align: center;
 }
 
 .seccion {
-    padding: 20px;
-    margin-top: 20px;
+    padding: 30px;
+    margin: 20px auto;
     background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 1200px;
 }
 
-/* Estilo para los productos */
+/* Productos */
 .product-list {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 .product-item {
-    width: 30%;
-    padding: 10px;
+    background-color: #f8f9fa; /* Fondo gris claro */
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
 .product-item img {
     max-width: 100%;
     height: auto;
+    border-bottom: 3px solid #1e3a5f; /* Línea decorativa */
 }
 
+.product-item h3 {
+    color: #1e3a5f; /* Azul oscuro */
+    margin: 15px 0 10px;
+}
+
+.product-item p {
+    color: #495057; /* Gris medio */
+    padding: 0 10px 15px;
+}
+
+/* Galería */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.gallery-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Formulario */
+form {
+    text-align: left;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #1e3a5f; /* Azul oscuro */
+    font-weight: bold;
+}
+
+form input, form textarea, form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da; /* Borde gris claro */
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+form button {
+    background-color: #1e3a5f; /* Azul oscuro */
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #2b5d8a; /* Azul intermedio */
+}
+
+/* Footer */
 footer {
-    background-color: #d96c06;
+    background-color: #1e3a5f; /* Azul oscuro */
     color: white;
     text-align: center;
     padding: 15px 0;
     margin-top: 20px;
+    font-size: 0.9em;
 }
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav ul li {
+        margin: 5px;
+    }
+
+    .product-item {
+        width: 90%; /* Reduce el ancho en dispositivos pequeños */
+    }
+
+    form button {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.2em;
+    }
+
+    nav ul li a {
+        font-size: 0.9em;
+    }
+
+    .seccion {
+        padding: 20px;
+    }
+}
+
